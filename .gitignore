@@ -1,0 +1,61 @@
+# ---- Build output ----
+build/
+bin/
+out/
+cmake-build-*/
+
+# ---- Object files / libs ----
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.ilk
+*.exp
+*.pdb
+
+# ---- Compiled executables from single-file labs (no extension) ----
+# Catches `g++ main.cpp -o main` style output anywhere in the repo,
+# including inside per-lab folders (e.g. lab2/main, lab2/lab2).
+main
+a.out
+lab*/lab*
+lab*/main
+[Ll]ab[0-9]*/[Ll]ab[0-9]*
+
+# ---- CMake ----
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+_deps/
+compile_commands.json
+
+# ---- IDE / editor ----
+.vscode/
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Windows ----
+Thumbs.db
+Desktop.ini
+
+# ---- Logs / temp ----
+*.log
+*.tmp
+
+# ---- Core dumps ----
+core
+core.*
