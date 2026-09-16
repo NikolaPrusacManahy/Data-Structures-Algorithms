@@ -20,13 +20,11 @@ cmake-build-*/
 *.pdb
 
 # ---- Compiled executables from single-file labs (no extension) ----
-# Catches `g++ main.cpp -o main` style output anywhere in the repo,
-# including inside per-lab folders (e.g. lab2/main, lab2/lab2).
-main
-a.out
-lab*/lab*
-lab*/main
-[Ll]ab[0-9]*/[Ll]ab[0-9]*
+# Catches `g++ main.cpp -o main` style output at the repo root.
+# Kept deliberately narrow (root-only) so it can never accidentally
+# match a real source folder like lab2/LAB2.
+/main
+/a.out
 
 # ---- CMake ----
 CMakeFiles/
