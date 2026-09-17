@@ -1,0 +1,65 @@
+    // Task 4 - Search the leaderboard
+    int searchValue;
+    std::cout << "Enter a score to search for: ";
+    std::cin >> searchValue;
+
+    auto foundIt = std::find(scores.begin(), scores.end(), searchValue);
+
+    if (foundIt != scores.end())
+    {
+        std::cout << "Score found." << std::endl;
+    }
+    else
+    {
+        std::cout << "Score not found." << std::endl;
+    }
+
+
+
+
+    // Task 5 - Process every score with a lambda
+    std::cout << "All scores (for_each): ";
+    std::for_each(scores.begin(), scores.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    std::cout << "All scores with points label: ";
+    std::for_each(scores.begin(), scores.end(), [](int n) {
+        std::cout << n << " points ";
+    });
+    std::cout << std::endl;
+
+    // int& parameter modifies each element in place
+    std::for_each(scores.begin(), scores.end(), [](int &n) {
+        n += 250;
+    });
+
+    std::cout << "Scores after 250-point bonus: ";
+    std::for_each(scores.begin(), scores.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+
+
+    // Task 6 - Build one complete report
+    std::cout << std::endl << "----- REPORT -----" << std::endl;
+
+    std::cout << std::endl << "Original Scores" << std::endl;
+    std::cout << "(see Task 1 output above)" << std::endl;
+
+    std::cout << std::endl << "Leaderboard" << std::endl;
+    std::for_each(scores.begin(), scores.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    std::cout << std::endl << "Search Result" << std::endl;
+    std::cout << (foundIt != scores.end() ? "Score found." : "Score not found.") << std::endl;
+
+    std::cout << std::endl << "After Bonus" << std::endl;
+    std::for_each(scores.begin(), scores.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
